@@ -1,27 +1,45 @@
-def final_velocity(u, a, t):
-    return u + (a * t)
 
-def displacement(u, a, t):
+print("\n1. FINAL VELOCITY (v = u + at)")
+u = float(input("Enter initial velocity (u): "))
+a = float(input("Enter acceleration (a): "))
+t = float(input("Enter time (t): "))
 
-    return (u * t) + (0.5 * a * t ** 2)
-
-
-def force(m, a):
-    return m * a
+v = u + (a * t)
+print("Final velocity =", v, "m/s")
 
 
-def work_done(force, distance):
-    return force * distance
+print("\n2. DISPLACEMENT (s = ut + 1/2at²)")
+u = float(input("Enter initial velocity (u): "))
+a = float(input("Enter acceleration (a): "))
+t = float(input("Enter time (t): "))
+
+s = (u * t) + (0.5 * a * t ** 2)
+print("Displacement =", s, "m")
 
 
-def power(work, time):
-    if time == 0:
-        raise ValueError("Time cannot be zero")
-    return work / time
+
+print("\n3. FORCE (F = ma)")
+m = float(input("Enter mass (m): "))
+a = float(input("Enter acceleration (a): "))
+
+F = m * a
+print("Force =", F, "N")
 
 
-print("Final Velocity:", final_velocity(10, 2, 4), "m/s")
-print("Displacement:", displacement(10, 2, 4), "m")
-print("Force:", force(5, 2), "N")
-print("Work Done:", work_done(20, 5), "J")
-print("Power:", power(100, 4), "W")
+print("\n4. WORK DONE (W = F × d)")
+F = float(input("Enter force (F): "))
+d = float(input("Enter distance (d): "))
+
+W = F * d
+print("Work done =", W, "J")
+
+
+print("\n5. POWER (P = W/t)")
+W = float(input("Enter work done (W): "))
+t = float(input("Enter time (t): "))
+
+if t != 0:
+    P = W / t
+    print("Power =", P, "W")
+else:
+    print("Time cannot be zero.")
