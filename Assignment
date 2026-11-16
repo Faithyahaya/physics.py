@@ -1,0 +1,78 @@
+def final_velocity():
+    u = float(input("Enter initial velocity: "))
+    a = float(input("Enter acceleration: "))
+    t = float(input("Enter time: "))
+
+    v = u + (a * t)
+    print("Final velocity =", v, "m/s")
+
+
+def displacement():
+    u = float(input("Enter initial velocity: "))
+    a = float(input("Enter acceleration: "))
+    t = float(input("Enter time: "))
+
+    s = (u * t) + (0.5 * a * t ** 2)
+    print("Displacement =", s, "m")
+
+def force():
+    m = float(input("Enter mass: "))
+    a = float(input("Enter acceleration: "))
+
+    F = m * a
+    print("Force =", F, "N")
+
+
+def work_done():
+    F = float(input("Enter force: "))
+    d = float(input("Enter distance: "))
+
+    W = F * d
+    print("Work done =", W, "J")
+
+def power():
+    W = float(input("Enter work done: "))
+    t = float(input("Enter time: "))
+
+    if t != 0:
+        P = W / t
+        print("Power =", P, "W")
+    else:
+        print("Time cannot be zero.")
+
+
+# Main program
+while True:
+
+    print("\nWELCOME TO THE PHYSICS CALCULATOR")
+    print("1. Final Velocity")
+    print("2. Displacement")
+    print("3. Force")
+    print("4. Work Done")
+    print("5. Power")
+
+    choice = input("Choose a physics operation (1-5): ")
+
+    if choice == "1":
+        final_velocity()
+
+    elif choice == "2":
+        displacement()
+
+    elif choice == "3":
+        force()
+
+    elif choice == "4":
+        work_done()
+
+    elif choice == "5":
+        power()
+
+    else:
+        print("Invalid choice.")
+
+    again = input("\nDo you want to continue? (yes/no): ")
+
+    if again.lower() != "yes":
+        print("Thank you for using the Physics Calculator!")
+        break
